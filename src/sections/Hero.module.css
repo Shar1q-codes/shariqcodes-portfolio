@@ -6,6 +6,7 @@
   position: relative;
   background: var(--primary-bg);
   overflow: hidden;
+  padding: clamp(1rem, 4vw, 4rem) 0;
 }
 
 .heroBg {
@@ -25,23 +26,23 @@
 .heroContent {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: min(900px, 90vw);
   width: 100%;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem);
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  border-radius: 2rem;
+  border-radius: clamp(1rem, 4vw, 2rem);
   box-shadow: 0 8px 40px 0 #a259ff33, 0 0 0 1px #ffffff0a;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2rem);
   animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1) both;
 }
 
 .headline {
-  font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
+  font-size: clamp(1.5rem, 7vw, 5rem);
   font-family: 'Sora', 'Inter', Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
@@ -51,25 +52,30 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
   animation: fadeInUp 1.2s 0.1s both;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.1;
 }
 
 .subheadline {
-  font-size: clamp(1.2rem, 2vw + 1rem, 2rem);
+  font-size: clamp(1rem, 3vw, 2rem);
   color: var(--secondary-text);
   font-weight: 600;
   letter-spacing: 0.08em;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1rem, 2vw, 2.5rem);
   animation: fadeInUp 1.2s 0.3s both;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .ctaButton {
   background: var(--glass-bg);
   border: 2px solid #a259ff;
   color: var(--primary-text);
-  padding: 1.2rem 3rem;
-  font-size: 1.3rem;
+  padding: clamp(0.9rem, 2vw, 1.2rem) clamp(2rem, 6vw, 3rem);
+  font-size: clamp(1rem, 3vw, 1.3rem);
   font-weight: 700;
   border-radius: 50px;
   cursor: pointer;
@@ -79,6 +85,11 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   outline: none;
+  min-width: clamp(120px, 30vw, 180px);
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ctaButton:hover {
@@ -94,16 +105,60 @@
 
 @media (max-width: 768px) {
   .heroContent {
-    padding: 2rem 1rem;
+    padding: clamp(1rem, 4vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+    border-radius: clamp(0.8rem, 3vw, 1.2rem);
   }
+  
   .headline {
-    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    font-size: clamp(1.2rem, 8vw, 2.5rem);
+    letter-spacing: 0.1em;
   }
+  
   .subheadline {
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+    letter-spacing: 0.06em;
   }
+  
   .ctaButton {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.2rem, 4vw, 2rem);
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    min-width: clamp(100px, 25vw, 120px);
+  }
+}
+
+@media (max-width: 375px) {
+  .heroContent {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .headline {
+    font-size: clamp(1rem, 10vw, 1.5rem);
+  }
+  
+  .ctaButton {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    min-width: 100px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .heroContent {
+    max-width: 1280px;
+    padding: clamp(2rem, 4vw, 5rem) clamp(2rem, 6vw, 6rem);
+  }
+  
+  .headline {
+    font-size: clamp(2.5rem, 4vw, 6rem);
+  }
+  
+  .subheadline {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  .ctaButton {
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    min-width: 200px;
   }
 } 

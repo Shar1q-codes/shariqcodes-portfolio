@@ -7,6 +7,9 @@
   --accent-gradient: linear-gradient(90deg, #a259ff, #5ce1e6, #f72585);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-blur: blur(10px);
+  --container-padding: clamp(1rem, 4vw, 2rem);
+  --section-padding: clamp(2rem, 8vw, 6rem);
+  --max-width: 1280px;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--primary-bg);
+  overflow-x: hidden;
 }
 
 body {
@@ -33,10 +37,21 @@ body {
   background: var(--primary-bg);
   margin: 0;
   padding: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+section {
+  padding: var(--section-padding) 0;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,13 +62,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-text);
   margin: 0 0 1rem 0;
   line-height: 1.1;
-  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 4vw + 1rem, 4rem);
   animation: fadeInUp 1s cubic-bezier(.77,0,.18,1) both;
 }
 
 p, span, li, a, button, input, textarea {
   font-family: 'Inter', 'Sora', Arial, sans-serif;
   color: var(--secondary-text);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
 }
 
 a {
@@ -70,20 +87,29 @@ a:hover {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
+  transform: translateY(-2px);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 @media (prefers-color-scheme: light) {
@@ -109,3 +135,49 @@ button:focus-visible {
     transform: translateY(0) scale(1);
   }
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Responsive Grid System */
+.grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+/* Responsive Flex System */
+.flex {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+/* Responsive Spacing Utilities */
+.mt-1 { margin-top: clamp(0.5rem, 1vw, 1rem); }
+.mt-2 { margin-top: clamp(1rem, 2vw, 2rem); }
+.mt-3 { margin-top: clamp(1.5rem, 3vw, 3rem); }
+.mb-1 { margin-bottom: clamp(0.5rem, 1vw, 1rem); }
+.mb-2 { margin-bottom: clamp(1rem, 2vw, 2rem); }
+.mb-3 { margin-bottom: clamp(1.5rem, 3vw, 3rem); }
+.p-1 { padding: clamp(0.5rem, 1vw, 1rem); }
+.p-2 { padding: clamp(1rem, 2vw, 2rem); }
+.p-3 { padding: clamp(1.5rem, 3vw, 3rem); }
+
+/* Responsive Text Utilities */
+.text-sm { font-size: clamp(0.75rem, 1.5vw, 0.875rem); }
+.text-base { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+.text-lg { font-size: clamp(1rem, 2vw, 1.25rem); }
+.text-xl { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+.text-2xl { font-size: clamp(1.5rem, 3vw, 2rem); }
+.text-3xl { font-size: clamp(2rem, 4vw, 3rem); }

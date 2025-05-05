@@ -1,6 +1,6 @@
 .contact {
   min-height: 100vh;
-  padding: 6rem 0 4rem 0;
+  padding: var(--section-padding) 0;
   background: var(--primary-bg);
   color: var(--primary-text);
   display: flex;
@@ -14,7 +14,7 @@
   top: 0;
   left: 50%;
   width: 80vw;
-  height: 120px;
+  height: clamp(60px, 10vw, 120px);
   transform: translateX(-50%);
   background: radial-gradient(ellipse at center, #f7258533 0%, transparent 80%);
   z-index: 1;
@@ -27,7 +27,7 @@
   left: 50%;
   top: 60%;
   width: 80vw;
-  height: 300px;
+  height: clamp(200px, 30vw, 300px);
   transform: translate(-50%, -50%);
   background: url('/preview.png') center center / cover no-repeat;
   filter: blur(40px) brightness(0.7) saturate(1.2);
@@ -37,9 +37,9 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--container-padding);
   width: 100%;
   position: relative;
   z-index: 2;
@@ -47,7 +47,7 @@
 
 .sectionTitle {
   text-align: center;
-  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -56,36 +56,38 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
   animation: fadeInUp 1.1s 0.1s both;
+  line-height: 1.2;
 }
 
 .sectionSubtitle {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: clamp(0.875rem, 1.5vw, 1.2rem);
   color: var(--secondary-text);
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
   animation: fadeInUp 1.1s 0.2s both;
+  line-height: 1.6;
 }
 
 .contactContent {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .infoCard,
 .availability {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  padding: 2rem;
-  border-radius: 20px;
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+  border-radius: clamp(1rem, 3vw, 20px);
   transition: box-shadow 0.3s, transform 0.3s;
   animation: fadeInUp 1.1s 0.3s both;
 }
@@ -99,8 +101,8 @@
 .infoCard h3,
 .availability h3 {
   color: var(--primary-text);
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -109,6 +111,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  line-height: 1.3;
 }
 
 .infoCard ul {
@@ -120,19 +123,19 @@
 .infoCard li {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: clamp(0.8rem, 1.5vw, 1rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .icon {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  width: 40px;
-  height: 40px;
+  width: clamp(32px, 4vw, 40px);
+  height: clamp(32px, 4vw, 40px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,32 +144,36 @@
 
 .infoCard h4 {
   color: var(--primary-text);
-  margin-bottom: 0.3rem;
+  margin-bottom: clamp(0.2rem, 0.5vw, 0.3rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .infoCard p {
   color: var(--secondary-text);
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  line-height: 1.6;
 }
 
 .availability p {
   color: var(--secondary-text);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
   line-height: 1.6;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
 }
 
 .availabilityStatus {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: clamp(0.3rem, 0.8vw, 0.5rem);
   color: var(--secondary-text);
 }
 
 .statusDot {
-  width: 10px;
-  height: 10px;
+  width: clamp(8px, 1vw, 10px);
+  height: clamp(8px, 1vw, 10px);
   background: #5ce1e6;
   border-radius: 50%;
   animation: pulse 2s infinite;
@@ -175,8 +182,8 @@
 .contactForm {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  padding: 2rem;
-  border-radius: 20px;
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+  border-radius: clamp(1rem, 3vw, 20px);
   transition: box-shadow 0.3s, transform 0.3s;
   animation: fadeInUp 1.1s 0.3s both;
 }
@@ -187,28 +194,30 @@
 }
 
 .formGroup {
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .formGroup label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);
   color: var(--primary-text);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
 }
 
 .formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 0.8rem;
+  padding: clamp(0.6rem, 1.2vw, 0.8rem);
   background: var(--glass-bg);
   border: 1px solid var(--glass-bg);
-  border-radius: 8px;
+  border-radius: clamp(6px, 1.5vw, 8px);
   color: var(--primary-text);
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
   transition: all 0.3s;
+  line-height: 1.6;
 }
 
 .formGroup input:focus,
@@ -227,8 +236,8 @@
   background: var(--glass-bg);
   color: #fff;
   border: 2px solid #a259ff;
-  padding: 1rem 2rem;
-  border-radius: 25px;
+  padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: clamp(20px, 3vw, 25px);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -236,6 +245,7 @@
   transition: box-shadow 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   box-shadow: 0 0 16px #a259ff99;
   width: 100%;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
 }
 
 .submitButton:hover {
@@ -253,9 +263,11 @@
 .successMessage,
 .errorMessage {
   text-align: center;
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: clamp(0.8rem, 1.5vw, 1rem);
+  border-radius: clamp(6px, 1.5vw, 8px);
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  line-height: 1.6;
 }
 
 .successMessage {
@@ -283,13 +295,62 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .contactContent {
     grid-template-columns: 1fr;
   }
+  
   .infoCard,
   .availability,
   .contactForm {
-    padding: 1.5rem;
+    padding: clamp(1rem, 2vw, 1.2rem);
+  }
+  
+  .sectionTitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+  }
+  
+  .sectionSubtitle {
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  }
+}
+
+@media (min-width: 1920px) {
+  .contactContent {
+    gap: clamp(3rem, 5vw, 4rem);
+  }
+  
+  .infoCard,
+  .availability,
+  .contactForm {
+    padding: clamp(2rem, 3vw, 2.5rem);
+  }
+  
+  .infoCard h3,
+  .availability h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .infoCard p,
+  .availability p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+  
+  .formGroup label {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+  
+  .submitButton {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
   }
 } 
