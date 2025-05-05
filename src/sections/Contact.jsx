@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import styles from "./Contact.module.css";
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     subject: "",
     message: "",
   });
@@ -28,12 +30,17 @@ const Contact = () => {
     setFormStatus({ submitting: true, submitted: false, error: false });
 
     try {
-      // Here you would typically send the form data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await emailjs.sendForm(
+        'service_pv97r7s',
+        'template_dtwnwya',
+        formRef.current,
+        'V_QVMRoFd7U35lQzg'
+      );
+      
       setFormStatus({ submitting: false, submitted: true, error: false });
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ user_name: "", user_email: "", subject: "", message: "" });
     } catch (error) {
+      console.error('Error sending email:', error);
       setFormStatus({ submitting: false, submitted: false, error: true });
     }
   };
@@ -88,14 +95,14 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className={styles.contactForm} onSubmit={handleSubmit}>
+          <form ref={formRef} className={styles.contactForm} onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="user_name">Name</label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={formData.name}
+                id="user_name"
+                name="user_name"
+                value={formData.user_name}
                 onChange={handleChange}
                 required
                 placeholder="Your name"
@@ -103,12 +110,12 @@ const Contact = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="user_email">Email</label>
               <input
                 type="email"
-                id="email"
-                name="email"
-                value={formData.email}
+                id="user_email"
+                name="user_email"
+                value={formData.user_email}
                 onChange={handleChange}
                 required
                 placeholder="Your email"
