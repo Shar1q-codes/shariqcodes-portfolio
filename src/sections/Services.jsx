@@ -1,36 +1,42 @@
-import styles from './Services.module.css';
+import styles from "./Services.module.css";
 
 const services = [
   {
-    title: 'Custom Web Design',
-    description: 'Creating beautiful, responsive websites using React and MERN stack technologies.',
-    icon: '💻'
+    title: "Custom Web Design",
+    description:
+      "Creating beautiful, responsive websites using React and MERN stack technologies.",
+    icon: "💻",
   },
   {
-    title: 'Freelancer Portfolio Builds',
-    description: 'Designing and developing professional portfolios that showcase your work effectively.',
-    icon: '🎨'
+    title: "Freelancer Portfolio Builds",
+    description:
+      "Designing and developing professional portfolios that showcase your work effectively.",
+    icon: "🎨",
   },
   {
-    title: '1:1 Teaching & Mentorship',
-    description: 'Personalized guidance in web development, computer science, and programming fundamentals.',
-    icon: '👨‍🏫'
+    title: "1:1 Teaching & Mentorship",
+    description:
+      "Personalized guidance in web development, computer science, and programming fundamentals.",
+    icon: "👨‍🏫",
   },
   {
-    title: 'Freelance Project Rescue',
-    description: 'Helping fix and optimize existing projects, ensuring they meet modern standards.',
-    icon: '🚑'
+    title: "Freelance Project Rescue",
+    description:
+      "Helping fix and optimize existing projects, ensuring they meet modern standards.",
+    icon: "🚑",
   },
   {
-    title: 'CSE Student Guidance',
-    description: 'Supporting computer science students with coursework, projects, and career advice.',
-    icon: '📚'
+    title: "CSE Student Guidance",
+    description:
+      "Supporting computer science students with coursework, and career advice.",
+    icon: "📚",
   },
   {
-    title: 'Data Dashboards & AI Projects',
-    description: 'Building interactive data visualizations and implementing machine learning solutions.',
-    icon: '📊'
-  }
+    title: "Data Dashboards & AI Projects",
+    description:
+      "Building interactive data visualizations and implementing machine learning solutions.",
+    icon: "📊",
+  },
 ];
 
 const Services = () => {
@@ -52,4 +58,4 @@ const Services = () => {
   );
 };
 
-export default Services; 
+export default Services;

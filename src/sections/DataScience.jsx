@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import styles from './DataScience.module.css';
+import { useState } from "react";
+import styles from "./DataScience.module.css";
 
 const timeline = [
   {
-    stage: 'Excel',
-    description: 'Mastered data manipulation and visualization in Excel',
-    year: '2018'
+    stage: "Excel",
+    description: "Mastered data manipulation and visualization in Excel",
+    year: "2025",
   },
   {
-    stage: 'SQL',
-    description: 'Learned database management and complex queries',
-    year: '2019'
+    stage: "SQL",
+    description: "Learned database management and complex queries",
+    year: "2025",
   },
   {
-    stage: 'Power BI',
-    description: 'Developed interactive dashboards and reports',
-    year: '2020'
+    stage: "Power BI",
+    description: "Developed interactive dashboards and reports",
+    year: "2025",
   },
   {
-    stage: 'Python',
-    description: 'Acquired Python programming and data analysis skills',
-    year: '2021'
+    stage: "Python",
+    description: "Acquired Python programming and data analysis skills",
+    year: "2025",
   },
   {
-    stage: 'Machine Learning',
-    description: 'Started implementing ML algorithms and models',
-    year: '2022'
-  }
+    stage: "Machine Learning",
+    description: "Started implementing ML algorithms and models",
+    year: "2025",
+  },
 ];
 
 const DataScience = () => {
@@ -56,11 +56,11 @@ const DataScience = () => {
         </div>
 
         <div className={styles.dashboardSection}>
-          <button 
+          <button
             className={styles.dashboardButton}
             onClick={() => setShowDashboard(!showDashboard)}
           >
-            {showDashboard ? 'Hide Dashboard' : 'See Dashboard Demo'}
+            {showDashboard ? "Hide Dashboard" : "See Dashboard Demo"}
           </button>
 
           {showDashboard && (
@@ -83,4 +83,4 @@ const DataScience = () => {
   );
 };
 
-export default DataScience; 
+export default DataScience;
