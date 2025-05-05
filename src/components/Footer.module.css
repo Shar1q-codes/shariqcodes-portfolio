@@ -1,0 +1,225 @@
+.footer {
+  background: var(--glass-bg);
+  color: var(--primary-text);
+  padding: 4rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -4px 32px #a259ff33, 0 0 0 1px #ffffff0a;
+  backdrop-filter: var(--glass-blur);
+  animation: fadeInUp 1s cubic-bezier(.77,0,.18,1) both;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80vw;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, #f7258533 0%, transparent 80%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footerSection {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeInUp 1.1s 0.2s both;
+}
+
+.footerSection:hover {
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.04);
+}
+
+.logoImg {
+  height: 64px;
+  max-width: 180px;
+  width: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  filter: drop-shadow(0 0 16px #a259ff) drop-shadow(0 0 32px #f72585);
+  transition: filter 0.3s;
+}
+
+.logoImg:hover {
+  filter: drop-shadow(0 0 32px #f72585) drop-shadow(0 0 48px #5ce1e6);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.tagline {
+  color: var(--secondary-text);
+  margin-bottom: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border-radius: 50%;
+  transition: box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 0 12px #a259ff55;
+}
+
+.socialLink:hover {
+  background: var(--accent-gradient);
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+}
+
+.socialLink svg {
+  fill: currentColor;
+  width: 20px;
+  height: 20px;
+}
+
+.footerSection h4 {
+  color: var(--primary-text);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.quickLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quickLinks li {
+  margin-bottom: 0.8rem;
+}
+
+.quickLinks a {
+  color: var(--secondary-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.quickLinks a:hover {
+  color: #f72585;
+  text-shadow: 0 0 8px #a259ff, 0 0 16px #f72585;
+}
+
+.quickLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+
+.quickLinks a:hover::after {
+  width: 100%;
+}
+
+.contactInfo {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.contactInfo li {
+  color: var(--secondary-text);
+  margin-bottom: 0.8rem;
+}
+
+.hireButton {
+  background: var(--glass-bg);
+  color: #fff;
+  border: 2px solid #a259ff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 0 16px #a259ff99;
+  width: 100%;
+}
+
+.hireButton:hover {
+  color: #f72585;
+  border-color: #f72585;
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.08);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-bg);
+}
+
+.copyright p {
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footerSection {
+    padding: 1.5rem;
+  }
+  .logo {
+    font-size: 1.8rem;
+  }
+} 

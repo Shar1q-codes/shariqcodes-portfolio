@@ -1,0 +1,108 @@
+.services {
+  min-height: 100vh;
+  padding: 6rem 0 4rem 0;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80vw;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, #a259ff33 0%, transparent 80%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1.1s 0.1s both;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.serviceCard {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 24px #a259ff33, 0 0 0 1px #ffffff0a;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeInUp 1.1s 0.2s both;
+}
+
+.serviceCard:hover {
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.04);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  transition: transform 0.3s;
+}
+
+.serviceCard:hover .serviceIcon {
+  transform: scale(1.2) rotate(-8deg);
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-text);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.serviceDescription {
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  .serviceCard {
+    padding: 2rem 1.2rem;
+  }
+} 

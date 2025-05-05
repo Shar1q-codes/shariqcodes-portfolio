@@ -1,0 +1,210 @@
+.teaching {
+  min-height: 100vh;
+  padding: 6rem 0 4rem 0;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.teaching::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80vw;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, #a259ff33 0%, transparent 80%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.quoteSection {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.quote {
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 0 2rem;
+  animation: fadeInUp 1.1s 0.1s both;
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(255, 107, 107, 0.3);
+  position: absolute;
+}
+
+.quote::before {
+  left: -1rem;
+  top: -1rem;
+}
+
+.quote::after {
+  right: -1rem;
+  bottom: -2rem;
+}
+
+.teachingApproach {
+  margin-bottom: 4rem;
+}
+
+.teachingApproach h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-text);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: fadeInUp 1.1s 0.2s both;
+}
+
+.approachGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.approachCard {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeInUp 1.1s 0.3s both;
+}
+
+.approachCard:hover {
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.04);
+}
+
+.approachCard h4 {
+  color: var(--primary-text);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.approachCard p {
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+.testimonials h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-text);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: fadeInUp 1.1s 0.2s both;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonialCard {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2rem;
+  border-radius: 20px;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeInUp 1.1s 0.3s both;
+}
+
+.testimonialCard:hover {
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.04);
+}
+
+.testimonialQuote {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+.testimonialAuthor {
+  text-align: right;
+}
+
+.testimonialAuthor strong {
+  color: #a259ff;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.testimonialAuthor span {
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .quote {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .teachingApproach h3,
+  .testimonials h3 {
+    font-size: 1.8rem;
+  }
+
+  .approachGrid,
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .approachCard,
+  .testimonialCard {
+    padding: 1.5rem;
+  }
+} 

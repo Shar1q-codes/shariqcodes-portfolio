@@ -1,0 +1,109 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--primary-bg);
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background: url('/preview.png') center center / cover no-repeat;
+  filter: blur(32px) brightness(0.7) saturate(1.2);
+  opacity: 0.7;
+  pointer-events: none;
+  animation: fadeInBg 2s cubic-bezier(.77,0,.18,1) both;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 2rem;
+  box-shadow: 0 8px 40px 0 #a259ff33, 0 0 0 1px #ffffff0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1) both;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
+  font-family: 'Sora', 'Inter', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1.2s 0.1s both;
+}
+
+.subheadline {
+  font-size: clamp(1.2rem, 2vw + 1rem, 2rem);
+  color: var(--secondary-text);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1.2s 0.3s both;
+}
+
+.ctaButton {
+  background: var(--glass-bg);
+  border: 2px solid #a259ff;
+  color: var(--primary-text);
+  padding: 1.2rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 24px #a259ff99, 0 0 48px #f7258599;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  animation: fadeInUp 1.2s 0.5s both;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  outline: none;
+}
+
+.ctaButton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 48px #5ce1e6cc, 0 0 96px #f72585cc;
+  border-color: #f72585;
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 0.7; }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 2rem 1rem;
+  }
+  .headline {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+  }
+  .subheadline {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+} 

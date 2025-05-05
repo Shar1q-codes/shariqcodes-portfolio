@@ -1,0 +1,295 @@
+.contact {
+  min-height: 100vh;
+  padding: 6rem 0 4rem 0;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80vw;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, #f7258533 0%, transparent 80%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 80vw;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  background: url('/preview.png') center center / cover no-repeat;
+  filter: blur(40px) brightness(0.7) saturate(1.2);
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.1s 0.1s both;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+  margin-bottom: 3rem;
+  animation: fadeInUp 1.1s 0.2s both;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoCard,
+.availability {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeInUp 1.1s 0.3s both;
+}
+
+.infoCard:hover,
+.availability:hover {
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.04);
+}
+
+.infoCard h3,
+.availability h3 {
+  color: var(--primary-text);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.infoCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoCard li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.infoCard h4 {
+  color: var(--primary-text);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.infoCard p {
+  color: var(--secondary-text);
+}
+
+.availability p {
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.availabilityStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary-text);
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  background: #5ce1e6;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.contactForm {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeInUp 1.1s 0.3s both;
+}
+
+.contactForm:hover {
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.04);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-bg);
+  border-radius: 8px;
+  color: var(--primary-text);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #a259ff;
+  background: rgba(162, 89, 255, 0.08);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--secondary-text);
+}
+
+.submitButton {
+  background: var(--glass-bg);
+  color: #fff;
+  border: 2px solid #a259ff;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 0 16px #a259ff99;
+  width: 100%;
+}
+
+.submitButton:hover {
+  color: #f72585;
+  border-color: #f72585;
+  box-shadow: 0 0 32px #5ce1e6cc, 0 0 64px #f72585cc;
+  transform: scale(1.08);
+}
+
+.submitButton:disabled {
+  background: rgba(162, 89, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.successMessage,
+.errorMessage {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.successMessage {
+  background: rgba(92, 225, 230, 0.2);
+  color: #5ce1e6;
+}
+
+.errorMessage {
+  background: rgba(247, 37, 133, 0.2);
+  color: #f72585;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+  }
+  .infoCard,
+  .availability,
+  .contactForm {
+    padding: 1.5rem;
+  }
+} 
