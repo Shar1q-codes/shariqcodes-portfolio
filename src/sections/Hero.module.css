@@ -7,6 +7,7 @@
   background: var(--primary-bg);
   overflow: hidden;
   padding: clamp(1rem, 4vw, 4rem) 0;
+  margin-top: 48px;
 }
 
 .heroBg {
@@ -16,11 +17,11 @@
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  background: url('/preview.png') center center / cover no-repeat;
+  background: url("/preview.png") center center / cover no-repeat;
   filter: blur(32px) brightness(0.7) saturate(1.2);
   opacity: 0.7;
   pointer-events: none;
-  animation: fadeInBg 2s cubic-bezier(.77,0,.18,1) both;
+  animation: fadeInBg 2s cubic-bezier(0.77, 0, 0.18, 1) both;
 }
 
 .heroContent {
@@ -38,12 +39,12 @@
   flex-direction: column;
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
-  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1) both;
+  animation: fadeInUp 1.2s cubic-bezier(0.77, 0, 0.18, 1) both;
 }
 
 .headline {
   font-size: clamp(1.5rem, 7vw, 5rem);
-  font-family: 'Sora', 'Inter', Arial, sans-serif;
+  font-family: "Sora", "Inter", Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -99,8 +100,12 @@
 }
 
 @keyframes fadeInBg {
-  from { opacity: 0; }
-  to { opacity: 0.7; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: 768px) {
@@ -108,17 +113,17 @@
     padding: clamp(1rem, 4vw, 2rem) clamp(0.5rem, 2vw, 1rem);
     border-radius: clamp(0.8rem, 3vw, 1.2rem);
   }
-  
+
   .headline {
     font-size: clamp(1.2rem, 8vw, 2.5rem);
     letter-spacing: 0.1em;
   }
-  
+
   .subheadline {
     font-size: clamp(0.9rem, 4vw, 1.2rem);
     letter-spacing: 0.06em;
   }
-  
+
   .ctaButton {
     padding: clamp(0.8rem, 2vw, 1rem) clamp(1.2rem, 4vw, 2rem);
     font-size: clamp(0.95rem, 3vw, 1.1rem);
@@ -130,11 +135,11 @@
   .heroContent {
     padding: 0.8rem 0.5rem;
   }
-  
+
   .headline {
     font-size: clamp(1rem, 10vw, 1.5rem);
   }
-  
+
   .ctaButton {
     padding: 0.7rem 1rem;
     font-size: 0.95rem;
@@ -147,18 +152,18 @@
     max-width: 1280px;
     padding: clamp(2rem, 4vw, 5rem) clamp(2rem, 6vw, 6rem);
   }
-  
+
   .headline {
     font-size: clamp(2.5rem, 4vw, 6rem);
   }
-  
+
   .subheadline {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
   }
-  
+
   .ctaButton {
     padding: clamp(1rem, 2vw, 1.5rem) clamp(2.5rem, 5vw, 4rem);
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     min-width: 200px;
   }
-} 
+}
