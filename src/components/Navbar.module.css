@@ -11,7 +11,7 @@
   backdrop-filter: var(--glass-blur);
   z-index: 1000;
   box-shadow: 0 4px 32px #a259ff33, 0 0 0 1px #ffffff0a;
-  animation: fadeInUp 1s cubic-bezier(.77,0,.18,1) both;
+  animation: fadeInUp 1s cubic-bezier(0.77, 0, 0.18, 1) both;
 }
 
 .logo a {
@@ -31,7 +31,7 @@
 .logoImg {
   height: clamp(48px, 8vw, 64px);
   max-width: clamp(140px, 20vw, 180px);
-  width: auto;
+  width: 150px;
   display: block;
   filter: drop-shadow(0 0 16px #a259ff) drop-shadow(0 0 32px #f72585);
   transition: filter 0.3s;
@@ -64,7 +64,7 @@
 }
 
 .navLinks a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: clamp(-4px, -0.5vw, -5px);
   left: 0;
@@ -123,7 +123,8 @@
   }
 
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(clamp(4px, 0.6vw, 5px), clamp(4px, 0.6vw, 5px));
+    transform: rotate(45deg)
+      translate(clamp(4px, 0.6vw, 5px), clamp(4px, 0.6vw, 5px));
   }
 
   .hamburger.active span:nth-child(2) {
@@ -131,7 +132,8 @@
   }
 
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(clamp(4px, 0.6vw, 5px), clamp(-4px, -0.6vw, -5px));
+    transform: rotate(-45deg)
+      translate(clamp(4px, 0.6vw, 5px), clamp(-4px, -0.6vw, -5px));
   }
 }
 
@@ -139,21 +141,21 @@
   .navbar {
     padding: clamp(1.2rem, 2.5vw, 1.5rem) clamp(5%, 8vw, 8%);
   }
-  
+
   .logo a {
     font-size: clamp(1.5rem, 3vw, 2rem);
   }
-  
+
   .logoImg {
     height: clamp(64px, 10vw, 80px);
     max-width: clamp(180px, 25vw, 220px);
   }
-  
+
   .navLinks {
     gap: clamp(2.5rem, 4vw, 3.5rem);
   }
-  
+
   .navLinks a {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
   }
-} 
+}
