@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Sora:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Sora:wght@400;700;900&display=swap");
 
 :root {
   --primary-bg: #0f0f0f;
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  font-family: 'Sora', 'Inter', Arial, sans-serif;
+  font-family: "Sora", "Inter", Arial, sans-serif;
   color: var(--primary-text);
   background: var(--primary-bg);
   margin: 0;
@@ -54,8 +54,13 @@ section {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Sora', 'Inter', Arial, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sora", "Inter", Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -63,11 +68,17 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1rem 0;
   line-height: 1.1;
   font-size: clamp(1.5rem, 4vw + 1rem, 4rem);
-  animation: fadeInUp 1s cubic-bezier(.77,0,.18,1) both;
+  animation: fadeInUp 1s cubic-bezier(0.77, 0, 0.18, 1) both;
 }
 
-p, span, li, a, button, input, textarea {
-  font-family: 'Inter', 'Sora', Arial, sans-serif;
+p,
+span,
+li,
+a,
+button,
+input,
+textarea {
+  font-family: "Inter", "Sora", Arial, sans-serif;
   color: var(--secondary-text);
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
   line-height: 1.6;
@@ -106,7 +117,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
   object-fit: cover;
@@ -136,7 +148,9 @@ img, video {
   }
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -164,20 +178,87 @@ img, video {
 }
 
 /* Responsive Spacing Utilities */
-.mt-1 { margin-top: clamp(0.5rem, 1vw, 1rem); }
-.mt-2 { margin-top: clamp(1rem, 2vw, 2rem); }
-.mt-3 { margin-top: clamp(1.5rem, 3vw, 3rem); }
-.mb-1 { margin-bottom: clamp(0.5rem, 1vw, 1rem); }
-.mb-2 { margin-bottom: clamp(1rem, 2vw, 2rem); }
-.mb-3 { margin-bottom: clamp(1.5rem, 3vw, 3rem); }
-.p-1 { padding: clamp(0.5rem, 1vw, 1rem); }
-.p-2 { padding: clamp(1rem, 2vw, 2rem); }
-.p-3 { padding: clamp(1.5rem, 3vw, 3rem); }
+.mt-1 {
+  margin-top: clamp(0.5rem, 1vw, 1rem);
+}
+.mt-2 {
+  margin-top: clamp(1rem, 2vw, 2rem);
+}
+.mt-3 {
+  margin-top: clamp(1.5rem, 3vw, 3rem);
+}
+.mb-1 {
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
+}
+.mb-2 {
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+}
+.mb-3 {
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+}
+.p-1 {
+  padding: clamp(0.5rem, 1vw, 1rem);
+}
+.p-2 {
+  padding: clamp(1rem, 2vw, 2rem);
+}
+.p-3 {
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
 
 /* Responsive Text Utilities */
-.text-sm { font-size: clamp(0.75rem, 1.5vw, 0.875rem); }
-.text-base { font-size: clamp(0.875rem, 1.5vw, 1rem); }
-.text-lg { font-size: clamp(1rem, 2vw, 1.25rem); }
-.text-xl { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
-.text-2xl { font-size: clamp(1.5rem, 3vw, 2rem); }
-.text-3xl { font-size: clamp(2rem, 4vw, 3rem); }
+.text-sm {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+.text-base {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+}
+.text-lg {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+.text-xl {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+.text-2xl {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.text-3xl {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+/* Smooth Scroll Behavior Globally */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* for iOS smooth scroll */
+}
+
+/* Improve text and element rendering smoothness */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  will-change: scroll-position;
+  overflow-x: hidden;
+}
+
+/* Optional: Prevent unwanted scroll flickers during animation */
+* {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Improve hardware acceleration for smoother effects */
+section,
+div,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  will-change: transform, opacity;
+}
