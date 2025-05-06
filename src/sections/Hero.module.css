@@ -52,7 +52,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
   margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
   animation: fadeInUp 1.2s 0.1s both;
   word-break: break-word;
